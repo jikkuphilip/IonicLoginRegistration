@@ -1,0 +1,59 @@
+
+<ion-content >
+  <div class="container bg">
+    <div class="row" >
+      <div  class="col-lg-4"></div>
+      <div class="col-lg-4 m-b-l" >
+        <div  class=" nowrap" style="color:green;" >
+          <h1 class="logo" >Logo</h1>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="row"  >
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+  <form  #login="ngForm" autocomplete="off"  novalidate (ngSubmit)="loginUser(login)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col >
+          <div  class=" nowrap" >
+            <h6 style="color:darkgray;">SIGN IN TO CONTINUE</h6>
+            <hr class="signin">
+          </div>
+          <div >
+            <div class="input-group mb-3 pad">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg"><i class=" fa fa-user"></i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Email" name="email"  [(ngModel)]="loginObj.email" #email="ngModel" pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" required>
+            </div>
+            <div *ngIf="login.submitted && email.errors?.required"><span class="text-danger">Email is required</span></div>
+            <!-- <div *ngIf = "email?.touched || email?.dirty" class="text-danger"> -->
+              <div *ngIf=" login.submitted && email.errors?.pattern"><span class="text-danger">invalid email</span></div>
+            <!-- </div> -->
+         
+            <div class="input-group mb-3 pad">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg"><i class=" fa fa-lock"></i></span>
+              </div>
+              <input type="password" class="form-control" placeholder="Password" name="pwd" [(ngModel)]="loginObj.password" #pwd="ngModel" required>
+            </div>
+            <div *ngIf="login.submitted && pwd.errors?.required"><span class="text-danger">Password is required</span></div>
+
+         
+          </div>
+          <div >
+            <ion-button class="btns" size="medium" type="submit" expand="block">SIGN IN</ion-button>
+            <p class="text-center lbl">Dont have an account?  <a (click)="gotoRegister()">Sign Up</a></p>
+
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</div>
+</div>
+</div>
+</ion-content>
+

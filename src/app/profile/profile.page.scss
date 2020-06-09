@@ -1,0 +1,48 @@
+h1 {
+    font-size: 2.5rem;
+    padding: 20px;
+    font-weight: 700;
+    color: #1ab394;
+    padding-left: 124px;
+  }
+  .bg{
+   background-color: #fff !important;
+  }
+  h5{
+    color: darkgrey;
+    font-family:serif;
+  }
+  img {
+    border-radius: 50%;
+    margin-top: -40px;
+  }
+  .icn{
+    position: absolute;
+    background-color: darkgray;
+    margin-top: 29px;
+    margin-left: -16px;
+    font-size: 20px;
+    border-radius: 50%;
+  } 
+  .btn {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .success {background-color: #4CAF50;} /* Green */
+  .success:hover {background-color: #46a049;}
+  
+  .info {background-color: #2196F3;} /* Blue */
+  .info:hover {background: #0b7dda;}
+  
+  .warning {background-color: #ff9800;} /* Orange */
+  .warning:hover {background: #e68a00;}
+  
+  .danger {background-color: #f44336;} /* Red */ 
+  .danger:hover {background: #da190b;}
+  
+  .default {background-color: #e7e7e7; color: black;} /* Gray */ 
+  .default:hover {background: #ddd;}

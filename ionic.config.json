@@ -1,5 +1,7 @@
 {
   "name": "spericornTest",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,68 @@
+
+<ion-content >
+  <div class="container bg">
+    <div class="row" >
+      <div  class="col-lg-4"></div>
+      <div class="col-lg-4 " >
+        <div  class=" nowrap" style="color:green;" >
+          <h1 class="logo" >Logo</h1>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="row"  >
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+  <form   #registration="ngForm" autocomplete="off" novalidate (ngSubmit)="registerUser(registration)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col >
+          <div  class=" nowrap" >
+            <h6 style="color:darkgray;">SIGN UP TO CONTINUE</h6>
+            <hr class="signin">
+          </div>
+          <div >
+            
+           
+              <input type="text" class="form-control m-b-s" name="usr" [(ngModel)]="userObj.username" #usr="ngModel" placeholder="Username" required>
+              <div *ngIf="registration.submitted && usr.errors?.required"><span class="text-danger">Username is required</span></div>
+            
+              <input type="email" class="form-control  m-b-s" name="email"   [(ngModel)]="userObj.email" #email="ngModel" id="email" 
+              pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"placeholder="Email"  required>
+              <div *ngIf="registration.submitted && email.errors?.required"><span class="text-danger">Email is required</span></div>
+              <div *ngIf = "email?.touched || email?.dirty" class="text-danger">
+                <div *ngIf="email.errors?.pattern">invalid email</div>
+              </div>
+              <input type="password" class="form-control  m-b-s"  name="pswrd" minlength="8"  [(ngModel)]="userObj.password"  #pswrd="ngModel" placeholder="Password" required>
+              <div *ngIf="registration.submitted && pswrd.errors?.required"><span class="text-danger">Password is required</span></div>
+              <div *ngIf=" pswrd.errors?.minlength"><span class="text-danger">minimum  8 characters riequired</span></div>
+
+
+              <input type="password" class="form-control  m-b-s" placeholder="Confirm Password" 
+              name="cnfrmpassword"  [(ngModel)]="userObj.cnfrmpassword"  #cnfrmpassword="ngModel" (ngModelChange)="checkPasswd()" required>
+              <div *ngIf="check==false"><span class="text-danger">Passwords does not match</span></div>
+              <div *ngIf="registration.submitted && cnfrmpassword.errors?.required"><span class="text-danger">Confirm password is required</span></div>
+
+              <input type="text" class="form-control  m-b-s" name="mphone"minlength="10" maxlength="10"   [(ngModel)]="userObj.phone" #mphone="ngModel" placeholder="Phone Number" required>
+              <div *ngIf="registration.submitted && mphone.errors?.required"><span class="text-danger">Phone Number is required</span></div>
+              <div *ngIf=" mphone.errors?.minlength ||  mphone.errors?.maxlength"><span class="text-danger">Invalid phone number</span></div>
+
+
+
+           
+         
+          </div>
+          <div >
+            <ion-button class="btns" size="medium" type="submit" expand="block">SIGN UP</ion-button>
+            <p class="text-center lbl">Already have an account?  <a (click)="gotoLogin()">Sign in</a></p>
+
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</div>
+</div>
+</div>
+</ion-content>
+
